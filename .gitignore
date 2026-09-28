@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.venv/
+venv/
+.env
+
+# Generated LUTs (build your own; don't commit throwaways)
+*.cube
+
+# OS
+.DS_Store

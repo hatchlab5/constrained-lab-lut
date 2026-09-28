@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "constrained-lab-lut"
+version = "1.0.0"
+description = "Constrained LAB color-match baked into a .cube 3D LUT for ffmpeg lut3d."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Matt Bowman" }]
+keywords = ["lut", "color-match", "lab", "cube", "ffmpeg", "color-grading", "video"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "numpy>=1.21",
+    "opencv-python>=4.5",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
+[project.scripts]
+constrained-lab-lut = "constrained_lab_lut.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/hatchlab5/constrained-lab-lut"
+
+[tool.setuptools.packages.find]
+include = ["constrained_lab_lut*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
